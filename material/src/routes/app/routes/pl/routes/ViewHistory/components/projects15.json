@@ -1,0 +1,721 @@
+[
+  {
+    "projectID": 0,
+    "projectStatus": false,
+    "projectDescription": "Duis anim excepteur occaecat eiusmod sint aute in qui esse dolor ad fugiat ut. Duis duis cillum qui incididunt in incididunt ea nisi. Lorem quis cupidatat eu sit exercitation aliqua. Veniam velit velit consectetur aute esse commodo eu ut non cupidatat tempor. Occaecat commodo consequat anim Lorem nostrud mollit fugiat. Consectetur tempor incididunt non quis laborum Lorem nisi sint duis id.",
+    "howManyMembers": 4,
+    "supervisor": [
+      {
+        "id": 0,
+        "name": "Fulton Wilkins"
+      }
+    ],
+    "createdBy": "student",
+    "createDate": "Saturday, September 24, 2016 5:02 PM",
+    "mermbers": [
+      {
+        "id": 0,
+        "name": "Earline Richards"
+      },
+      {
+        "id": 1,
+        "name": "Laurie Beach"
+;      {
+        "id": 2,
+        "name": "Gabriela Bond"
+      },
+      {
+        "id": 3,
+        "name": "Emily Gilliam"
+      }
+    ],
+    "relatedAreas": [
+      {
+        "Photonics": false,
+        "SemiconductorPhysics": true,
+        "Electromagnetics": true,
+        "EnergySystems": true,
+        "Analog": true,
+        "DigitalElectronics": false,
+        "Control": false,
+        "Communications": true,
+        "SignalProcessing": true,
+        "ComputerHardware": false,
+        "ComputerNetwokds": true,
+        "Software": false
+      }
+    ]
+  },
+  {
+    "projectID": 1,
+    "projectStatus": true,
+    "projectDescription": "Ex ipsum nisi consectetur reprehenderit ea nulla irure non excepteur. Duis quis consequat est do id nostrud aliqua pariatur mollit ipsum. Do non fugiat in cillum minim quis quis sint eiusmod officia est ea esse sint. Sit incididunt ea quis esse excepteur cupidatat ex nostrud dolore. Officia proident magna laborum mollit. Ipsum officia eiusmod exercitation eu aliqua irure nulla cupidatat. Adipisicing velit id laboris amet.",
+    "howManyMembers": 2,
+    "supervisor": [
+      {
+        "id": 0,
+        "name": "Joan Cross"
+      }
+    ],
+    "createdBy": "company",
+    "createDate": "Friday, April 18, 2014 11:24 AM",
+    "mermbers": [
+      {
+        "id": 0,
+        "name": "Herring Lane"
+      },
+      {
+        "id": 1,
+        "name": "Angelia Dejesus"
+      },
+      {
+        "id": 2,
+        "name": "Rodgers Mann"
+      },
+      {
+        "id": 3,
+        "name": "Navarro Sullivan"
+      }
+    ],
+    "relatedAreas": [
+      {
+        "Photonics": false,
+        "SemiconductorPhysics": true,
+        "Electromagnetics": true,
+        "EnergySystems": false,
+        "Analog": false,
+        "DigitalElectronics": false,
+        "Control": false,
+        "Communications": false,
+        "SignalProcessing": true,
+        "ComputerHardware": false,
+        "ComputerNetwokds": true,
+        "Software": false
+      }
+    ]
+  },
+  {
+    "projectID": 2,
+    "projectStatus": true,
+    "projectDescription": "Eiusmod tempor ipsum nostrud nostrud amet consequat quis occaecat. Esse laboris in est nostrud amet cupidatat officia ut fugiat mollit non est ex. Aute anim id nisi consequat anim velit anim consequat. Ullamco duis ipsum est laborum enim ullamco elit pariatur nulla.",
+    "howManyMembers": 4,
+    "supervisor": [
+      {
+        "id": 0,
+        "name": "Little England"
+      }
+    ],
+    "createdBy": "company",
+    "createDate": "Thursday, July 13, 2017 4:08 AM",
+    "mermbers": [
+      {
+        "id": 0,
+        "name": "Cleveland Cain"
+      },
+      {
+        "id": 1,
+        "name": "Carney Bryan"
+      },
+      {
+        "id": 2,
+        "name": "Wilder Lee"
+      },
+      {
+        "id": 3,
+        "name": "Mamie Mcleod"
+      }
+    ],
+    "relatedAreas": [
+      {
+        "Photonics": false,
+        "SemiconductorPhysics": true,
+        "Electromagnetics": true,
+        "EnergySystems": false,
+        "Analog": true,
+        "DigitalElectronics": true,
+        "Control": false,
+        "Communications": true,
+        "SignalProcessing": false,
+        "ComputerHardware": false,
+        "ComputerNetwokds": false,
+        "Software": false
+      }
+    ]
+  },
+  {
+    "projectID": 3,
+    "projectStatus": true,
+    "projectDescription": "Occaecat qui mollit culpa nostrud aliqua velit dolore ullamco dolor nulla aliqua et nisi ut. Ipsum duis id sit pariatur proident ipsum adipisicing cillum esse et. Id culpa magna ex nulla anim do ullamco tempor ipsum in sunt.",
+    "howManyMembers": 2,
+    "supervisor": [
+      {
+        "id": 0,
+        "name": "Blanca Beard"
+      }
+    ],
+    "createdBy": "student",
+    "createDate": "Sunday, May 7, 2017 5:16 PM",
+    "mermbers": [
+      {
+        "id": 0,
+        "name": "Rice Vang"
+      },
+      {
+        "id": 1,
+        "name": "Cathleen Ford"
+      },
+      {
+        "id": 2,
+        "name": "Spence Foley"
+      },
+      {
+        "id": 3,
+        "name": "Chandler Nolan"
+      }
+    ],
+    "relatedAreas": [
+      {
+        "Photonics": true,
+        "SemiconductorPhysics": false,
+        "Electromagnetics": false,
+        "EnergySystems": false,
+        "Analog": true,
+        "DigitalElectronics": false,
+        "Control": false,
+        "Communications": true,
+        "SignalProcessing": false,
+        "ComputerHardware": true,
+        "ComputerNetwokds": true,
+        "Software": true
+      }
+    ]
+  },
+  {
+    "projectID": 4,
+    "projectStatus": true,
+    "projectDescription": "Adipisicing fugiat ipsum occaecat consequat ipsum amet nostrud laboris. Labore mollit enim cupidatat nulla. Cillum ad eu esse minim minim in mollit incididunt laboris dolor ea sint sint. Dolore aliqua id cillum consequat do laboris deserunt aliquip aliqua in amet id. Sunt id dolore voluptate excepteur veniam quis occaecat et consectetur. Magna nisi proident excepteur sint veniam.",
+    "howManyMembers": 2,
+    "supervisor": [
+      {
+        "id": 0,
+        "name": "Gamble Simon"
+      }
+    ],
+    "createdBy": "company",
+    "createDate": "Monday, July 21, 2014 5:40 AM",
+    "mermbers": [
+      {
+        "id": 0,
+        "name": "Marlene Lawson"
+      },
+      {
+        "id": 1,
+        "name": "Marquez Bullock"
+      },
+      {
+        "id": 2,
+        "name": "Christine Brewer"
+      },
+      {
+        "id": 3,
+        "name": "Chasity Baxter"
+      }
+    ],
+    "relatedAreas": [
+      {
+        "Photonics": true,
+        "SemiconductorPhysics": false,
+        "Electromagnetics": true,
+        "EnergySystems": false,
+        "Analog": true,
+        "DigitalElectronics": true,
+        "Control": true,
+        "Communications": false,
+        "SignalProcessing": false,
+        "ComputerHardware": true,
+        "ComputerNetwokds": true,
+        "Software": false
+      }
+    ]
+  },
+  {
+    "projectID": 5,
+    "projectStatus": false,
+    "projectDescription": "Officia exercitation cupidatat cupidatat ut voluptate sunt ut. Esse anim dolore excepteur dolor ea aliquip ad commodo magna enim. Incididunt aliquip aute id veniam ex veniam. Nostrud sit adipisicing anim anim. Pariatur qui est occaecat cillum velit id qui adipisicing anim do culpa labore tempor ullamco. Dolore officia in aliqua sit ullamco adipisicing labore excepteur velit. Duis cillum exercitation officia nisi proident.",
+    "howManyMembers": 3,
+    "supervisor": [
+      {
+        "id": 0,
+        "name": "Nichols Rivers"
+      }
+    ],
+    "createdBy": "professor",
+    "createDate": "Wednesday, January 27, 2016 12:56 AM",
+    "mermbers": [
+      {
+        "id": 0,
+        "name": "June Fulton"
+      },
+      {
+        "id": 1,
+        "name": "Julia Pratt"
+      },
+      {
+        "id": 2,
+        "name": "Wilkinson Pearson"
+      },
+      {
+        "id": 3,
+        "name": "Becky Mcgee"
+      }
+    ],
+    "relatedAreas": [
+      {
+        "Photonics": false,
+        "SemiconductorPhysics": false,
+        "Electromagnetics": true,
+        "EnergySystems": false,
+        "Analog": false,
+        "DigitalElectronics": false,
+        "Control": true,
+        "Communications": false,
+        "SignalProcessing": true,
+        "ComputerHardware": true,
+        "ComputerNetwokds": true,
+        "Software": true
+      }
+    ]
+  },
+  {
+    "projectID": 6,
+    "projectStatus": true,
+    "projectDescription": "Aliqua et id non sint enim dolore magna labore ex. Ad nulla quis aute qui excepteur irure nostrud pariatur ea. Voluptate dolor quis nisi veniam enim pariatur veniam.",
+    "howManyMembers": 2,
+    "supervisor": [
+      {
+        "id": 0,
+        "name": "Levy Clemons"
+      }
+    ],
+    "createdBy": "company",
+    "createDate": "Tuesday, November 18, 2014 4:25 AM",
+    "mermbers": [
+      {
+        "id": 0,
+        "name": "Bradley Pierce"
+      },
+      {
+        "id": 1,
+        "name": "Mollie Lyons"
+      },
+      {
+        "id": 2,
+        "name": "Rosemary Estrada"
+      },
+      {
+        "id": 3,
+        "name": "Ballard Graham"
+      }
+    ],
+    "relatedAreas": [
+      {
+        "Photonics": false,
+        "SemiconductorPhysics": false,
+        "Electromagnetics": false,
+        "EnergySystems": false,
+        "Analog": false,
+        "DigitalElectronics": false,
+        "Control": true,
+        "Communications": false,
+        "SignalProcessing": false,
+        "ComputerHardware": false,
+        "ComputerNetwokds": true,
+        "Software": true
+      }
+    ]
+  },
+  {
+    "projectID": 7,
+    "projectStatus": true,
+    "projectDescription": "Amet eiusmod nulla laborum exercitation voluptate deserunt. Ad exercitation amet labore sint enim. Ea ad esse pariatur proident laborum pariatur minim est aliqua magna id ullamco cillum. Pariatur est magna Lorem sunt officia sunt. Commodo esse et incididunt commodo eiusmod cillum magna non laboris occaecat sit incididunt mollit. Ullamco laboris dolor et exercitation id dolor incididunt fugiat veniam labore eu laboris.",
+    "howManyMembers": 4,
+    "supervisor": [
+      {
+        "id": 0,
+        "name": "Kristi Bray"
+      }
+    ],
+    "createdBy": "student",
+    "createDate": "Tuesday, September 19, 2017 9:15 AM",
+    "mermbers": [
+      {
+        "id": 0,
+        "name": "Gross Reed"
+      },
+      {
+        "id": 1,
+        "name": "Paul Winters"
+      },
+      {
+        "id": 2,
+        "name": "Sweet Glenn"
+      },
+      {
+        "id": 3,
+        "name": "Shelton Vargas"
+      }
+    ],
+    "relatedAreas": [
+      {
+        "Photonics": true,
+        "SemiconductorPhysics": true,
+        "Electromagnetics": false,
+        "EnergySystems": false,
+        "Analog": false,
+        "DigitalElectronics": false,
+        "Control": false,
+        "Communications": true,
+        "SignalProcessing": false,
+        "ComputerHardware": true,
+        "ComputerNetwokds": true,
+        "Software": false
+      }
+    ]
+  },
+  {
+    "projectID": 8,
+    "projectStatus": false,
+    "projectDescription": "Proident magna nostrud reprehenderit cillum sit irure nostrud et voluptate duis. Non cillum adipisicing id magna pariatur quis ipsum enim eiusmod culpa duis in. Est pariatur culpa laboris id pariatur ea nulla velit do minim laboris amet ullamco. Non officia sunt sit laborum enim ut tempor sint.",
+    "howManyMembers": 2,
+    "supervisor": [
+      {
+        "id": 0,
+        "name": "Duran Stephenson"
+      }
+    ],
+    "createdBy": "student",
+    "createDate": "Thursday, May 5, 2016 8:46 AM",
+    "mermbers": [
+      {
+        "id": 0,
+        "name": "Solis Hodges"
+      },
+      {
+        "id": 1,
+        "name": "Hester Sloan"
+      },
+      {
+        "id": 2,
+        "name": "Minnie Everett"
+      },
+      {
+        "id": 3,
+        "name": "Witt Noble"
+      }
+    ],
+    "relatedAreas": [
+      {
+        "Photonics": true,
+        "SemiconductorPhysics": false,
+        "Electromagnetics": false,
+        "EnergySystems": true,
+        "Analog": false,
+        "DigitalElectronics": false,
+        "Control": true,
+        "Communications": false,
+        "SignalProcessing": true,
+        "ComputerHardware": true,
+        "ComputerNetwokds": false,
+        "Software": true
+      }
+    ]
+  },
+  {
+    "projectID": 9,
+    "projectStatus": true,
+    "projectDescription": "Aute cupidatat et ut sit id cillum quis. Nulla labore deserunt aliqua sint laborum esse ex. Nostrud aute quis laboris enim anim non cillum velit dolore. Fugiat ex laborum in duis ea quis dolore eiusmod adipisicing consequat reprehenderit do deserunt pariatur. Dolor reprehenderit fugiat minim ipsum ex id officia cupidatat adipisicing sit labore non. Nostrud sit commodo duis pariatur ea nostrud sunt aliquip ipsum tempor. Laboris id id dolor incididunt amet ut eu laborum Lorem aliquip dolor nostrud nostrud voluptate.",
+    "howManyMembers": 3,
+    "supervisor": [
+      {
+        "id": 0,
+        "name": "Herman Rogers"
+      }
+    ],
+    "createdBy": "student",
+    "createDate": "Sunday, July 24, 2016 4:59 AM",
+    "mermbers": [
+      {
+        "id": 0,
+        "name": "Della Goodman"
+      },
+      {
+        "id": 1,
+        "name": "Monica Delacruz"
+      },
+      {
+        "id": 2,
+        "name": "Snider Anderson"
+      },
+      {
+        "id": 3,
+        "name": "Lindsay Vaughn"
+      }
+    ],
+    "relatedAreas": [
+      {
+        "Photonics": true,
+        "SemiconductorPhysics": true,
+        "Electromagnetics": true,
+        "EnergySystems": true,
+        "Analog": true,
+        "DigitalElectronics": true,
+        "Control": false,
+        "Communications": false,
+        "SignalProcessing": false,
+        "ComputerHardware": false,
+        "ComputerNetwokds": true,
+        "Software": false
+      }
+    ]
+  },
+  {
+    "projectID": 10,
+    "projectStatus": false,
+    "projectDescription": "Enim id sit qui veniam. Elit voluptate sunt et proident non non. Elit amet id culpa reprehenderit ea labore occaecat ullamco magna excepteur pariatur. Amet pariatur laborum anim pariatur cupidatat qui ullamco proident sint. Commodo irure amet tempor proident. Consectetur minim veniam magna et nulla nostrud aute minim consequat adipisicing deserunt consectetur consequat.",
+    "howManyMembers": 2,
+    "supervisor": [
+      {
+        "id": 0,
+        "name": "Black Luna"
+      }
+    ],
+    "createdBy": "professor",
+    "createDate": "Thursday, December 11, 2014 2:56 AM",
+    "mermbers": [
+      {
+        "id": 0,
+        "name": "Chaney Lamb"
+      },
+      {
+        "id": 1,
+        "name": "Lauren Henson"
+      },
+      {
+        "id": 2,
+        "name": "Eliza Cannon"
+      },
+      {
+        "id": 3,
+        "name": "Grimes Blackwell"
+      }
+    ],
+    "relatedAreas": [
+      {
+        "Photonics": false,
+        "SemiconductorPhysics": true,
+        "Electromagnetics": false,
+        "EnergySystems": true,
+        "Analog": false,
+        "DigitalElectronics": false,
+        "Control": true,
+        "Communications": true,
+        "SignalProcessing": true,
+        "ComputerHardware": true,
+        "ComputerNetwokds": true,
+        "Software": false
+      }
+    ]
+  },
+  {
+    "projectID": 11,
+    "projectStatus": true,
+    "projectDescription": "Ullamco esse enim nostrud ea do et ex qui mollit. Dolore est voluptate consequat elit laboris aliquip. Qui cupidatat cillum reprehenderit nisi. Nostrud cillum fugiat cupidatat aliquip tempor est excepteur labore id irure.",
+    "howManyMembers": 4,
+    "supervisor": [
+      {
+        "id": 0,
+        "name": "Wood Lambert"
+      }
+    ],
+    "createdBy": "company",
+    "createDate": "Monday, January 16, 2017 8:51 PM",
+    "mermbers": [
+      {
+        "id": 0,
+        "name": "Jordan Petersen"
+      },
+      {
+        "id": 1,
+        "name": "Lawrence Ramsey"
+      },
+      {
+        "id": 2,
+        "name": "Castaneda Rowe"
+      },
+      {
+        "id": 3,
+        "name": "Rhea Williams"
+      }
+    ],
+    "relatedAreas": [
+      {
+        "Photonics": false,
+        "SemiconductorPhysics": false,
+        "Electromagnetics": false,
+        "EnergySystems": true,
+        "Analog": true,
+        "DigitalElectronics": false,
+        "Control": false,
+        "Communications": true,
+        "SignalProcessing": false,
+        "ComputerHardware": false,
+        "ComputerNetwokds": false,
+        "Software": true
+      }
+    ]
+  },
+  {
+    "projectID": 12,
+    "projectStatus": false,
+    "projectDescription": "Ea officia non velit voluptate amet velit est consectetur esse aute qui est. Eu commodo excepteur minim sunt est mollit mollit exercitation in. Excepteur mollit mollit qui commodo eiusmod nostrud veniam incididunt dolore tempor ex sit Lorem ea. Officia aliqua occaecat quis consequat commodo excepteur fugiat cupidatat consectetur aliqua sunt irure sit pariatur.",
+    "howManyMembers": 4,
+    "supervisor": [
+      {
+        "id": 0,
+        "name": "Dorsey Owen"
+      }
+    ],
+    "createdBy": "professor",
+    "createDate": "Saturday, October 3, 2015 8:46 PM",
+    "mermbers": [
+      {
+        "id": 0,
+        "name": "Mathews Mueller"
+      },
+      {
+        "id": 1,
+        "name": "Cochran Gaines"
+      },
+      {
+        "id": 2,
+        "name": "Velma Preston"
+      },
+      {
+        "id": 3,
+        "name": "Lynda Rodriquez"
+      }
+    ],
+    "relatedAreas": [
+      {
+        "Photonics": true,
+        "SemiconductorPhysics": false,
+        "Electromagnetics": true,
+        "EnergySystems": false,
+        "Analog": false,
+        "DigitalElectronics": true,
+        "Control": true,
+        "Communications": true,
+        "SignalProcessing": false,
+        "ComputerHardware": true,
+        "ComputerNetwokds": true,
+        "Software": true
+      }
+    ]
+  },
+  {
+    "projectID": 13,
+    "projectStatus": false,
+    "projectDescription": "Consequat do irure occaecat pariatur anim anim nulla dolore sunt id. Est do fugiat dolore proident do. Et proident incididunt qui anim.",
+    "howManyMembers": 3,
+    "supervisor": [
+      {
+        "id": 0,
+        "name": "Clarke Marks"
+      }
+    ],
+    "createdBy": "professor",
+    "createDate": "Saturday, December 24, 2016 4:27 PM",
+    "mermbers": [
+      {
+        "id": 0,
+        "name": "Sheena Benton"
+      },
+      {
+        "id": 1,
+        "name": "Patrica Massey"
+      },
+      {
+        "id": 2,
+        "name": "Reyes Castillo"
+      },
+      {
+        "id": 3,
+        "name": "Reid Salas"
+      }
+    ],
+    "relatedAreas": [
+      {
+        "Photonics": true,
+        "SemiconductorPhysics": true,
+        "Electromagnetics": false,
+        "EnergySystems": true,
+        "Analog": false,
+        "DigitalElectronics": true,
+        "Control": true,
+        "Communications": false,
+        "SignalProcessing": false,
+        "ComputerHardware": true,
+        "ComputerNetwokds": false,
+        "Software": false
+      }
+    ]
+  },
+  {
+    "projectID": 14,
+    "projectStatus": false,
+    "projectDescription": "Ullamco esse nulla esse exercitation sit occaecat magna non voluptate. Dolore in fugiat aliqua dolore dolor elit qui adipisicing est exercitation ad nisi laborum non. Occaecat eu commodo labore consectetur quis eiusmod esse Lorem dolore elit.",
+    "howManyMembers": 2,
+    "supervisor": [
+      {
+        "id": 0,
+        "name": "Augusta Carey"
+      }
+    ],
+    "createdBy": "student",
+    "createDate": "Sunday, January 12, 2014 7:37 PM",
+    "mermbers": [
+      {
+        "id": 0,
+        "name": "Callie Flores"
+      },
+      {
+        "id": 1,
+        "name": "Blackwell Carter"
+      },
+      {
+        "id": 2,
+        "name": "Burns Marsh"
+      },
+      {
+        "id": 3,
+        "name": "Ebony Whitley"
+      }
+    ],
+    "relatedAreas": [
+      {
+        "Photonics": false,
+        "SemiconductorPhysics": true,
+        "Electromagnetics": true,
+        "EnergySystems": true,
+        "Analog": false,
+        "DigitalElectronics": true,
+        "Control": false,
+        "Communications": true,
+        "SignalProcessing": true,
+        "ComputerHardware": true,
+        "ComputerNetwokds": false,
+        "Software": true
+      }
+    ]
+  }
+]
