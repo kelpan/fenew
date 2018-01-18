@@ -100,7 +100,7 @@ const style = {
 
 
 //sort
-$(document).ready(function(){
+/*$(document).ready(function(){
   $('#sortbytime').click(function() {
     var menu_text = $('#sortbytime').text().trim();
     if(menu_text=='Sort: Oldest First')
@@ -109,7 +109,7 @@ $(document).ready(function(){
       $("#sortbytime").text('Sort: Oldest First');
   })
 });
-
+*/
 
 
 export default class AllFilters extends React.Component {
@@ -122,10 +122,11 @@ export default class AllFilters extends React.Component {
     if (order === 'desc') {
       this.refs.table.handleSort('asc','createDate');
       order = 'asc';
+      $("#sortbytime").text('Sort: Oldest First');
     } else {
       this.refs.table.handleSort('desc', 'createDate');
       order = 'desc';
-
+      $("#sortbytime").text('Sort: Newest First');
     }
   }
 
