@@ -14,7 +14,7 @@ const Intro = () => (
 
           </p>
           <p>
-          In this course, the students will develop skills that allow them to identify a problem given a brief description its context. Given that many real problems are solved by teams, it is essential that students learn how to work in teams and how to plan a project so that all team members become responsible for specific tasks. kjnjnksjdncjkndcjkdns
+          In this course, the students will develop skills that allow them to identify a problem given a brief description its context. Given that many real problems are solved by teams, it is essential that students learn how to work in teams and how to plan a project so that all team members become responsible for specific tasks. 
           </p>
         </article>
       </div>

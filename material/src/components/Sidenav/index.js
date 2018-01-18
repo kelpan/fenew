@@ -52,7 +52,7 @@ class Sidebar extends React.Component {
             'bg-color-danger': ['16', '26', '36'].indexOf(colorOption) >= 0 })}
                 >
 
-          <Link to="/" className="brand">{APPCONFIG.brand}</Link>
+          <Link to="/app/homepage/introduction" className="brand">{APPCONFIG.brand}</Link>
           <a href="javascript:;" className="collapsednav-toggler" onClick={this.onToggleCollapsedNav}>
             {toggleIcon}
           </a>
