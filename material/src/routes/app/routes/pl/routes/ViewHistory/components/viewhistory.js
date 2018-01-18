@@ -1,113 +1,90 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+import RaisedButton from 'material-ui/RaisedButton';
+import { ValidatorForm } from 'react-form-validator-core';
+import { TextValidator } from 'react-material-ui-form-validator';
 
-const products = [];
+export default class ResetFormExample extends React.Component {
 
-function myFunction(x) {
-  if(x%3==0)
-      return 'yes';
-  else if(x%3==1)
-      return 'no';
-  else if(x%3==2)
-    return 'unknown';
+    constructor(props) {
+        super(props);
 
-}
+        this.state = {
+            formData: {
+                email: '',
+                password: '',
+            },
+            submitted: false,
+        };
 
-function addProducts(quantity) {
-  const startId = products.length;
-  for (let i = 0; i < quantity; i++) {
-    const id = startId + i;
-    products.push({
-      id: id,
-      name: 'Item name ' + id,
-
-      isInStock: myFunction(Math.floor((Math.random() * 100) + 1)%3)
-    });
-  }
-}
-
-addProducts(5);
-
-class CheckboxFilter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.filter = this.filter.bind(this);
-    this.isFiltered = this.isFiltered.bind(this);
-  }
-
-  filter(event) {
-    if (this.refs.nokCheckbox.checked && this.refs.okCheckbox.checked&& this.refs.unknowCheckbox.checked) {
-      // all checkboxes are checked means we want to remove the filter for this column
-      this.props.filterHandler();
-    } else {
-      this.props.filterHandler({ callback: this.isFiltered });
-    }
-  }
-
-  isFiltered(targetValue) {
-    if (targetValue === 'no') {
-      return (this.refs.nokCheckbox.checked);
-    } else if(targetValue==='yes'){
-      return (this.refs.okCheckbox.checked);
-    }else{
-      return (this.refs.unknowCheckbox.checked)
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.reset = this.reset.bind(this);
     }
 
-  }
+    handleChange(event) {
+        const { formData } = this.state;
+        formData[event.target.name] = event.target.value;
+        this.setState({ formData });
+    }
 
-  cleanFiltered() {
-    this.refs.okCheckbox.checked = true;
-    this.refs.nokCheckbox.checked = true;
-    this.refs.unknowCheckbox.checked = true;
-    this.props.filterHandler();
-  }
+    handleSubmit() {
+        this.setState({ submitted: true }, () => {
+            setTimeout(() => this.setState({ submitted: false }), 5000);
+        });
+    }
 
-  render() {
-    return (
-      <div>
-        <input ref='okCheckbox' type='checkbox' className='filter' onChange={ this.filter } defaultChecked={ true } /><label>{ this.props.textOK }</label>
-        <input ref='nokCheckbox' type='checkbox' className='filter' onChange={ this.filter } defaultChecked={ true } style={ { marginLeft: 30 + 'px' } } /><label>{ this.props.textNOK }</label>
-        <input ref='unknowCheckbox' type='checkbox' className='filter' onChange={ this.filter } defaultChecked={ true } style={ { marginLeft: 60 + 'px' } } /><label>{ this.props.textunknown }</label>
-      </div>
-    );
-  }
-}
+    reset() {
+        this.setState({
+            formData: {
+                email: '',
+                password: '',
+            },
+        });
+        this.refs.form.resetValidations();
+    }
 
-CheckboxFilter.propTypes = {
-  filterHandler: PropTypes.func.isRequired,
-  textOK: PropTypes.string,
-  textNOK: PropTypes.string,
-  textunknown: PropTypes.string
-};
-
-CheckboxFilter.defaultProps = {
-  textOK: 'OK',
-  textNOK: 'Not OK',
-  textunknown:'unknown'
-};
-
-function getCustomFilter(filterHandler, customFilterParameters) {
-  return (
-    <CheckboxFilter filterHandler={ filterHandler } textOK={ customFilterParameters.textOK } textNOK={ customFilterParameters.textNOK } textunknown={ customFilterParameters.textunknown } />
-  );
-}
-
-export default class CustomFilter extends React.Component {
-  handleClick = () => {
-    this.refs.isInStock.cleanFiltered();
-  }
-
-  render() {
-    return (
-      <div>
-        <button className='btn btn-default' onClick={ this.handleClick }>Clear Filter</button>
-        <BootstrapTable data={ products }>
-          <TableHeaderColumn dataField='id' isKey={ true }>Product ID</TableHeaderColumn>
-          <TableHeaderColumn dataField='name'>Product Name</TableHeaderColumn>
-          <TableHeaderColumn ref='isInStock' dataField='isInStock' filter={ { type: 'CustomFilter', getElement: getCustomFilter, customFilterParameters: { textOK: 'yes', textNOK: 'no' , textunknown:'unknown' } } }>Product Is In Stock</TableHeaderColumn>
-        </BootstrapTable>
-      </div>
-    );
-  }
+    render() {
+        const { formData, submitted } = this.state;
+        return (
+            <ValidatorForm
+                ref="form"
+                onSubmit={this.handleSubmit}
+            >
+                <h2>Reset form</h2>
+                <TextValidator
+                    floatingLabelText="Email"
+                    onChange={this.handleChange}
+                    name="email"
+                    value={formData.email}
+                    validators={['required', 'isEmail']}
+                    errorMessages={['this field is required', 'email is not valid']}
+                />
+                <br />
+                <TextValidator
+                    floatingLabelText="Password"
+                    onChange={this.handleChange}
+                    name="password"
+                    value={formData.password}
+                    validators={['required']}
+                    errorMessages={['this field is required']}
+                />
+                <br />
+                <RaisedButton
+                    type="submit"
+                    label={
+                        (submitted && 'Your form is submitted!')
+                        || (!submitted && 'Submit')
+                    }
+                    style={{ marginRight: '16px' }}
+                    disabled={submitted}
+                />
+                <RaisedButton
+                    type="button"
+                    label="reset"
+                    onClick={this.reset}
+                    primary
+                />
+            </ValidatorForm>
+        );
+    }
 }
