@@ -97,11 +97,18 @@ class SidebarContent extends React.Component {
         <li><FlatButton  href="#/app/homepage/login"><i className="nav-icon material-icons">person</i><span className="nav-text">Login</span></FlatButton></li>
 
         <li className="nav-divider" />
+        <li className="nav-header"><span>User</span></li>
+        <li><FlatButton  href="#/app/pl/UserProfile"><i className="nav-icon material-icons">perm_identity</i><span className="nav-text">User Profile</span></FlatButton></li>
+        <li><FlatButton  href="#/app/pl/LikedProject"><i className="nav-icon material-icons">favorite_boarder</i><span className="nav-text">Liked Projects</span></FlatButton></li>
+
+
+
+        <li className="nav-divider" />
         <li className="nav-header"><span>Project</span></li>
         <li><FlatButton  href="#/app/pl/ProjectListing"><i className="nav-icon material-icons">list</i><span className="nav-text">Projects Listing</span></FlatButton></li>
         <li><FlatButton  href="#/app/pl/Addproject"><i className="nav-icon material-icons">playlist_add</i><span className="nav-text">Add Project</span></FlatButton></li>
         <li><FlatButton  href="#/app/pl/ProjectDetails"><i className="nav-icon material-icons">art_track</i><span className="nav-text">Project Details</span></FlatButton></li>
-        <li><FlatButton  href="#/app/pl/ViewHistory"><i className="nav-icon material-icons">history</i><span className="nav-text">View History</span></FlatButton></li>
+        <li><FlatButton  href="#/app/pl/ViewHistory"><i className="nav-icon material-icons">history</i><span className="nav-text">Testing Page</span></FlatButton></li>
 
 
         <li><FlatButton href="#/app/dashboard"><i className="nav-icon material-icons">dashboard</i><span className="nav-text">Dashboard</span></FlatButton></li>
