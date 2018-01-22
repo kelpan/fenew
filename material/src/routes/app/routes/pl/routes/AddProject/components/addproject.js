@@ -4,11 +4,15 @@ import QueueAnim from 'rc-queue-anim';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn, TableFooter} from 'material-ui/Table';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
+import createClass from 'create-react-class';
+import PropTypes from 'prop-types';
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
 import {Form, form, FormGroup, FormControl, ControlLabel, HelpBlock } from 'react-bootstrap';
 import TextField from 'material-ui/TextField';
 import Toggle from 'material-ui/Toggle';
-
 import { FormErrors } from './FormErrors';
+
 
 class Page extends Component {
   constructor (props) {
@@ -90,7 +94,7 @@ class Page extends Component {
         </div>
 
         <div className={`form-group ${this.errorClass(this.state.formErrors.title)}`}>
-          <label htmlFor="title">Title</label>
+          <label htmlFor="title">Title</label>z
           <input type="title" className="form-control" name="title"
                  placeholder="title"
                  value={this.state.title}
@@ -121,9 +125,8 @@ class Page extends Component {
         </div>
 
 
-
         <div className="form-group">
-          <RelatedArea />
+          <MultiSelectField />
         </div>
 
         <button type="submit" className="btn btn-primary" disabled={!this.state.formValid}>Submit</button>
@@ -274,6 +277,69 @@ class RelatedArea extends React.Component {
 }
 
 
+
+
+const FLAVOURS = [
+  { label: 'Software', value: 'Software' },
+  { label: 'Hardware', value: 'Hardware' },
+  { label: 'Digital', value: 'Digital' },
+];
+
+const WHY_WOULD_YOU = [
+  { label: 'Software (are you crazy?)', value: 'Software', disabled: true },
+].concat(FLAVOURS.slice(1));
+
+var MultiSelectField = createClass({
+  displayName: 'MultiSelectField',
+  propTypes: {
+    label: PropTypes.string,
+  },
+  getInitialState () {
+    return {
+      removeSelected: false,
+      disabled: false,
+      crazy: false,
+      stayOpen: false,
+      value: [],
+      rtl: false,
+    };
+  },
+  handleSelectChange (value) {
+    console.log('You\'ve selected:', value);
+    this.setState({ value });
+  },
+  toggleCheckbox (e) {
+    this.setState({
+      [e.target.name]: e.target.checked,
+    });
+  },
+  toggleRtl (e) {
+    let rtl = e.target.checked;
+    this.setState({ rtl });
+  },
+
+  render () {
+    const { crazy, disabled, stayOpen, value } = this.state;
+    const options = crazy ? WHY_WOULD_YOU : FLAVOURS;
+    return (
+      <div className="section">
+        <Select
+          closeOnSelect={stayOpen}
+          disabled={disabled}
+          multi
+          onChange={this.handleSelectChange}
+          options={options}
+          placeholder="Related Area(s)"
+          removeSelected={false}
+          rtl={this.state.rtl}
+          simpleValue
+          value={value}
+        />
+
+      </div>
+    );
+  }
+});
 
 
 
