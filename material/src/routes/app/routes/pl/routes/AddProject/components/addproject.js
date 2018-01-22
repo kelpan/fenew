@@ -1,49 +1,136 @@
-import React from 'react';
+import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import QueueAnim from 'rc-queue-anim';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn, TableFooter} from 'material-ui/Table';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
-
+import {Form, form, FormGroup, FormControl, ControlLabel, HelpBlock } from 'react-bootstrap';
 import TextField from 'material-ui/TextField';
 import Toggle from 'material-ui/Toggle';
 
-const AddProjectForm = () => (
-  <article className="article">
-    <h2 className="article-title">Create a New Project</h2>
-    <div className="box box-default">
-      <div className="box-body padding-xl">
-        <form role="form">
-          <label>I am:
-            <div className="form-group">
-              <Createby />
-            </div>
-          </label>
-          <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Project Title</label>
-            <input type="projectTitle" className="form-control" id="projectTitle" placeholder="Enter Project Title" />
-          </div>
+import { FormErrors } from './FormErrors';
 
-          <div className="form-group">
-            <RelatedArea />
-          </div>
+class Page extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      email: '',
+      title: '',
+      intro: '',
+      formErrors: {email: '', title: '', intro: '', description: ''},
+      emailValid: false,
+      titleValid: false,
+      introValid:false,
+      desValid:false,
+      formValid: false
+    }
+  }
 
-          <div className="form-group">
-            <label htmlFor="exampleInputPassword1">Description</label>
-            <input type="projectDes" className="form-control" id="projectDes" placeholder="Enter Project Description" />
-          </div>
+  handleUserInput = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    this.setState({[name]: value},
+      () => { this.validateField(name, value) });
+  }
 
-
-          <RaisedButton label="Submit" primary className="btn-w-md" />
-          <div className="divider" />
-        </form>
-
-      </div>
-    </div>
-  </article>
-);
+  validateField(fieldName, value) {
+    let fieldValidationErrors = this.state.formErrors;
+    let emailValid = this.state.emailValid;
+    let titleValid = this.state.titleValid;
+    let introValid = this.state.introValid;
+    let desValid = this.state.desValid;
+    let formValid = this.state.formValid;
 
 
+
+    switch(fieldName) {
+      case 'email':
+        emailValid = value.match();
+        fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+        break;
+      case 'title':
+        titleValid = value.length <=20;
+        fieldValidationErrors.title = titleValid ? '': ' is too long';
+        break;
+
+      case 'intro':
+        introValid = (value.length >= 30 && value.length <= 60);
+        fieldValidationErrors.intro = introValid ? '': '  should between 30 and 60 characters';
+
+      case 'description':
+        desValid = (value.length <= 500);
+        fieldValidationErrors.description = desValid ? '': '  is too long';
+
+        break;
+      default:
+        break;
+    }
+    this.setState({formErrors: fieldValidationErrors,
+      emailValid: emailValid,
+      titleValid: titleValid,
+      introValid: introValid,
+      desValid: desValid
+    }, this.validateForm);
+  }
+
+  validateForm() {
+    this.setState({formValid: this.state.emailValid && this.state.titleValid});
+  }
+
+  errorClass(error) {
+    return(error.length === 0 ? '' : 'has-error');
+  }
+
+  render () {
+    return (
+      <form className="demoForm">
+        <h2 className="article-title">Create a New Project</h2>
+        <div className="panel panel-default">
+          <FormErrors formErrors={this.state.formErrors} />
+        </div>
+
+        <div className={`form-group ${this.errorClass(this.state.formErrors.title)}`}>
+          <label htmlFor="title">Title</label>
+          <input type="title" className="form-control" name="title"
+                 placeholder="title"
+                 value={this.state.title}
+                 onChange={this.handleUserInput}  />
+        </div>
+
+        <div className={`form-group ${this.errorClass(this.state.formErrors.intro)}`}>
+          <label htmlFor="Intro">Intro</label>
+          <textarea type="intro" className="form-control" name="intro"
+                    placeholder="Intro"
+                    rows="2"
+                    value={this.state.intro}
+                    onChange={this.handleUserInput}  />
+        </div>
+
+        <div className={`form-group ${this.errorClass(this.state.formErrors.description)}`}>
+          <label htmlFor="Description">Description</label>
+          <textarea type="description" className="form-control" name="description"
+                    placeholder="Description"
+                    rows="5"
+                    value={this.state.description}
+                    onChange={this.handleUserInput}  />
+        </div>
+
+        <div className="form-group">
+          <lable>  Number of Members</lable>
+          <Members />
+        </div>
+
+
+
+        <div className="form-group">
+          <RelatedArea />
+        </div>
+
+        <button type="submit" className="btn btn-primary" disabled={!this.state.formValid}>Submit</button>
+      </form>
+    )
+  }
+}
 
 //created by
 const styles = {
@@ -52,7 +139,7 @@ const styles = {
   },
 };
 
-class Createby extends React.Component {
+class Members extends React.Component {
 
   constructor(props) {
     super(props);
@@ -71,15 +158,18 @@ class Createby extends React.Component {
           style={styles.customWidth}
           autoWidth={false}
         >
-          <MenuItem value={1} primaryText="Student" />
-          <MenuItem value={2} primaryText="Professor" />
-          <MenuItem value={3} primaryText="Alumni" />
-          <MenuItem value={4} primaryText="Company" />
+          <MenuItem value={1} primaryText="2" />
+          <MenuItem value={2} primaryText="3" />
+          <MenuItem value={3} primaryText="4" />
+          <MenuItem value={4} primaryText="2-4" />
         </DropDownMenu>
       </div>
     );
   }
 }
+
+
+
 
 //related area
 const tableData = [
@@ -120,6 +210,10 @@ const tableData = [
   }
 ];
 
+
+
+
+
 class RelatedArea extends React.Component {
   constructor(props) {
     super(props);
@@ -142,7 +236,7 @@ class RelatedArea extends React.Component {
   render() {
     return (
       <article className="article">
-        <label htmlFor="exampleInputPassword1">Related Area</label>
+        <label htmlFor="exampleInputtitle1">Related Area</label>
         <div className="row">
           <div className="col-xl-9">
 
@@ -181,13 +275,6 @@ class RelatedArea extends React.Component {
 
 
 
-const Page = () => (
-  <section className="container-fluid with-maxwidth chapter">
-    <QueueAnim type="bottom" className="ui-animate">
-      <div key="1"><AddProjectForm /></div>
 
-    </QueueAnim>
-  </section>
-);
 
-module.exports = Page;
+export default Page;
