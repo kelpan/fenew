@@ -7,6 +7,7 @@ import ProjectDetails from './routes/ProjectDetails/'
 import ViewHistory from './routes/ViewHistory/'
 import LikedProject from './routes/LikedProject/'
 import UserProfile from './routes/UserProfile/'
+import EditUserProfile from './routes/EditUserProfile/'
 
 
 
@@ -21,7 +22,7 @@ const Table = ({ match }) => (
     <Route path={`${match.url}/ViewHistory`} component={ViewHistory}/>
     <Route path={`${match.url}/LikedProject`} component={LikedProject}/>
     <Route path={`${match.url}/UserProfile`} component={UserProfile}/>
-
+    <Route path={`${match.url}/EditUserProfile`} component={EditUserProfile}/>
   </div>
 )
 
