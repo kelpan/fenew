@@ -7,7 +7,7 @@ import { ValidatorForm } from 'react-form-validator-core';
 import { TextValidator } from 'react-material-ui-form-validator';
 
 
-class Login extends React.Component {
+class LoginError extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -72,6 +72,7 @@ class Login extends React.Component {
                 errorMessages={['this field is required']}
             fullWidth
             />
+            <p className="formErrors">Authentication failed.</p>
             <div className="card-action no-border text-right">
             <RaisedButton
             type="submit" primary
@@ -90,7 +91,7 @@ class Login extends React.Component {
         </div>
 
         <div className="additional-info">
-        <a href="https://recover.utorid.utoronto.ca/default.aspx" target="_blank">Forgot your password?</a>
+          <a href="https://recover.utorid.utoronto.ca/default.aspx" target="_blank">Forgot your password?</a>
         </div>
 
       </div>
@@ -103,7 +104,7 @@ const Page = () => (
     <div className="main-body">
       <QueueAnim type="bottom" className="ui-animate">
         <div key="1">
-          <Login />
+          <LoginError />
         </div>
       </QueueAnim>
     </div>
