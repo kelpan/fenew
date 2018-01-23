@@ -53,7 +53,7 @@ class Details extends React.Component {
 						      <h1 className="hero-title">Student Name</h1>
 						    </div>
 						    <p className="text-muted">Student</p>
-						      <RaisedButton style={mWidthStyle} label="Edit Profile" /><div className="divider" />
+						      <RaisedButton style={mWidthStyle} href="#/app/pl/EditUserProfile" label="Edit Profile" /><div className="divider" />
 						    
 						  </section>
 						  <article className="article padding-lg-v article-dark article-bordered">

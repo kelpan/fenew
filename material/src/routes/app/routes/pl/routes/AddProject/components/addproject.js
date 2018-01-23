@@ -18,11 +18,11 @@ class Page extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      email: '',
+     // email: '',
       title: '',
-      intro: '',
-      formErrors: {email: '', title: '', intro: '', description: ''},
-      emailValid: false,
+      introduction: '',
+      formErrors: {/*email: '', */title: '', introduction: '', description: ''},
+     // emailValid: false,
       titleValid: false,
       introValid:false,
       desValid:false,
@@ -39,7 +39,7 @@ class Page extends Component {
 
   validateField(fieldName, value) {
     let fieldValidationErrors = this.state.formErrors;
-    let emailValid = this.state.emailValid;
+    //let emailValid = this.state.emailValid;
     let titleValid = this.state.titleValid;
     let introValid = this.state.introValid;
     let desValid = this.state.desValid;
@@ -48,29 +48,52 @@ class Page extends Component {
 
 
     switch(fieldName) {
-      case 'email':
+      /*case 'email':
         emailValid = value.match();
         fieldValidationErrors.email = emailValid ? '' : ' is invalid';
-        break;
+        break;*/
       case 'title':
-        titleValid = value.length <=20;
-        fieldValidationErrors.title = titleValid ? '': ' is too long';
+        titleValid = (value.length >= 1 && value.length <= 50);
+        if(titleValid){
+        	fieldValidationErrors.title = '';
+        } else if(value.length < 1){
+        	fieldValidationErrors.title = ' should not be empty';
+        } else {
+        	fieldValidationErrors.title = ' is too long';
+        }/*
+        fieldValidationErrors.title = (titleValid && value.length >= 1) ? '': ' should not be empty';
+        fieldValidationErrors.title = (titleValid && value.length <= 20) ? '': ' is too long';*/
         break;
 
-      case 'intro':
-        introValid = (value.length >= 30 && value.length <= 60);
-        fieldValidationErrors.intro = introValid ? '': '  should between 30 and 60 characters';
+      case 'introduction':
+        introValid = (value.length >= 1 && value.length <= 200); 
+        if(introValid){
+        	fieldValidationErrors.introduction = '';
+        } else if(value.length < 1){
+        	fieldValidationErrors.introduction = ' should not be empty';
+        } else {
+        	fieldValidationErrors.introduction = ' is too long';
+        }
+        //fieldValidationErrors.introduction = introValid ? '': '  should between 1 and 60 characters';
+        break;
 
       case 'description':
-        desValid = (value.length <= 500);
-        fieldValidationErrors.description = desValid ? '': '  is too long';
-
+        desValid = (value.length >= 1 && value.length <= 1000);
+        if(desValid){
+        	fieldValidationErrors.description = '';
+        } else if(value.length < 1){
+        	fieldValidationErrors.description = ' should not be empty';
+        } else {
+        	fieldValidationErrors.description = ' is too long';
+        }/*
+        fieldValidationErrors.description = desValid ? '': '  should between 1 and 500 characters';*/
         break;
+        
       default:
         break;
     }
     this.setState({formErrors: fieldValidationErrors,
-      emailValid: emailValid,
+     // emailValid: emailValid,
       titleValid: titleValid,
       introValid: introValid,
       desValid: desValid
@@ -78,7 +101,7 @@ class Page extends Component {
   }
 
   validateForm() {
-    this.setState({formValid: this.state.emailValid && this.state.titleValid});
+    this.setState({formValid: (this.state.introValid && this.state.titleValid && this.state.desValid)});
   }
 
   errorClass(error) {
@@ -87,50 +110,62 @@ class Page extends Component {
 
   render () {
     return (
-      <form className="demoForm">
-        <h2 className="article-title">Create a New Project</h2>
-        <div className="panel panel-default">
-          <FormErrors formErrors={this.state.formErrors} />
-        </div>
-
-        <div className={`form-group ${this.errorClass(this.state.formErrors.title)}`}>
-          <label htmlFor="title">Title</label>z
-          <input type="title" className="form-control" name="title"
-                 placeholder="title"
-                 value={this.state.title}
-                 onChange={this.handleUserInput}  />
-        </div>
-
-        <div className={`form-group ${this.errorClass(this.state.formErrors.intro)}`}>
-          <label htmlFor="Intro">Intro</label>
-          <textarea type="intro" className="form-control" name="intro"
-                    placeholder="Intro"
-                    rows="2"
-                    value={this.state.intro}
-                    onChange={this.handleUserInput}  />
-        </div>
-
-        <div className={`form-group ${this.errorClass(this.state.formErrors.description)}`}>
-          <label htmlFor="Description">Description</label>
-          <textarea type="description" className="form-control" name="description"
-                    placeholder="Description"
-                    rows="5"
-                    value={this.state.description}
-                    onChange={this.handleUserInput}  />
-        </div>
-
-        <div className="form-group">
-          <lable>  Number of Members</lable>
-          <Members />
-        </div>
-
-
-        <div className="form-group">
-          <MultiSelectField />
-        </div>
-
-        <button type="submit" className="btn btn-primary" disabled={!this.state.formValid}>Submit</button>
-      </form>
+	<section className="container-fluid with-maxwidth chapter">
+    <QueueAnim type="bottom" className="ui-animate">
+    <div key="1">
+  	  <article className="article">
+  	    <h2 className="article-title">Create a New Project</h2>
+        <div className="box box-default">
+        <div className="box-body padding-xl">
+	      <form className="demoForm">
+	        <div className="panel panel-default">
+	          <FormErrors formErrors={this.state.formErrors} />
+	        </div>
+	
+	        <div className={`form-group ${this.errorClass(this.state.formErrors.title)}`}>
+	          <label htmlFor="title">Project Title (required)</label>
+	          <input type="title" className="form-control" name="title"
+	                 placeholder="Please enter project title..."
+	                 value={this.state.title}
+	                 onChange={this.handleUserInput}  />
+	        </div>
+	
+	        <div className={`form-group ${this.errorClass(this.state.formErrors.introduction)}`}>
+	          <label htmlFor="introduction">Project Introduction (required)</label>
+	          <textarea type="introduction" className="form-control" name="introduction"
+	                    placeholder="Please enter a short introduction of the project..."
+	                    rows="2"
+	                    value={this.state.introduction}
+	                    onChange={this.handleUserInput}  />
+	        </div>
+	
+	        <div className={`form-group ${this.errorClass(this.state.formErrors.description)}`}>
+	          <label htmlFor="Description">Project Description (required)</label>
+	          <textarea type="description" className="form-control" name="description"
+	                    placeholder="Please enter the detailed project description..."
+	                    rows="5"
+	                    value={this.state.description}
+	                    onChange={this.handleUserInput}  />
+	        </div>
+	
+	        <div className="form-group">
+	          <lable>  Number of Members</lable>
+	          <Members />
+	        </div>
+	
+	
+	        <div className="form-group">
+	          <MultiSelectField />
+	        </div>
+	
+	        <RaisedButton label="Submit" primary className="btn-w-md" disabled={!this.state.formValid} href="#/app/pl/ProjectDetails"/>
+	      </form>
+	      </div>
+	      </div>
+	    </article>
+	    </div>
+	    </QueueAnim>
+	  </section>
     )
   }
 }
@@ -329,7 +364,7 @@ var MultiSelectField = createClass({
           multi
           onChange={this.handleSelectChange}
           options={options}
-          placeholder="Related Area(s)"
+          placeholder="Project Related Area(s)"
           removeSelected={false}
           rtl={this.state.rtl}
           simpleValue

@@ -19,7 +19,7 @@ const EditAreaForm = () => (
             <RelatedArea />
           </div>
           
-          <RaisedButton label="Submit" primary className="btn-w-md" />
+          <RaisedButton label="Submit" primary className="btn-w-md"  href="#/app/pl/UserProfile"/>
           <div className="divider" />
         </form>
 

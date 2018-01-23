@@ -3,16 +3,40 @@ import APPCONFIG from 'constants/Config';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import QueueAnim from 'rc-queue-anim';
+import { ValidatorForm } from 'react-form-validator-core';
+import { TextValidator } from 'react-material-ui-form-validator';
+
 
 class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      brand: APPCONFIG.brand
+      brand: APPCONFIG.brand,
+        formData: {
+            email: '',
+            password: '',
+        },
+        submitted: false,
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+    handleChange(event) {
+        const { formData } = this.state;
+        formData[event.target.name] = event.target.value;
+        this.setState({ formData });
+    }
+
+    handleSubmit() {
+        this.setState({ submitted: true }, () => {
+            setTimeout(() => this.setState({ submitted: false }), 5000);
+        });
+    }
+
   render() {
+      const { formData, submitted } = this.state;
     return (
       <div className="body-inner">
         <div className="card bg-white">
@@ -22,26 +46,46 @@ class Login extends React.Component {
               <h1><a href="#/">{this.state.brand}</a></h1>
             </section>
 
-            <form className="form-horizontal">
-              <fieldset>
-                <div className="form-group">
-                  <TextField
-                    floatingLabelText="Utorid"
-                    fullWidth
-                  />
+            <ValidatorForm
+            ref="form"
+            onSubmit={this.handleSubmit}>
+            <fieldset>
+            <div className="form-group">
+            
+            <TextValidator
+            floatingLabelText="Utorid"
+            onChange={this.handleChange}
+            name="utorid"
+            value={formData.utorid}
+            validators={['required']}
+            errorMessages={['this field is required']}
+            fullWidth
+            />
                 </div>
                 <div className="form-group">
-                  <TextField
-                    floatingLabelText="Password"
-                    type="password"
-                    fullWidth
-                  />
-                </div>
-              </fieldset>
-            </form>
+            <TextValidator
+                floatingLabelText="Password"
+                onChange={this.handleChange}
+                name="password"
+                value={formData.password}
+                validators={['required']}
+                errorMessages={['this field is required']}
+            fullWidth
+            />
+            <div className="card-action no-border text-right">
+            <RaisedButton
+            type="submit" primary
+            label={
+                (submitted && 'Please wait while logging in...')
+                || (!submitted && 'login')
+            }
+            style={{ marginRight: '16px' }}
+            disabled={submitted}
+            />
           </div>
-          <div className="card-action no-border text-right">
-            <a href="#/" className="color-primary">Login</a>
+            </div>
+            </fieldset>
+            </ValidatorForm>
           </div>
         </div>
 
